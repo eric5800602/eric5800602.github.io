@@ -1,0 +1,149 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"shadows": true,
+		"vr": false
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "3AA1DC33-5ECC-499A-82F6-5FC83616F449",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"layers": 1,
+			"matrix": [0.998201,0,-0.059964,0,-0.057629,0.276357,-0.959326,0,0.016571,0.961055,0.275859,0,-0.227422,14.240672,5.308867,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.01,
+			"far": 1000,
+			"focus": 10,
+			"aspect": 1.791304,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "38AE3880-AB28-43D7-BD50-720976A610E5",
+				"type": "CircleBufferGeometry",
+				"radius": 1,
+				"segments": 8,
+				"thetaStart": 0,
+				"thetaLength": 6.283185
+			},
+			{
+				"uuid": "03170D56-4D7A-4AE2-87DD-E11769755A41",
+				"type": "CircleBufferGeometry",
+				"radius": 1,
+				"segments": 8,
+				"thetaStart": 0,
+				"thetaLength": 6.283185
+			}],
+		"materials": [
+			{
+				"uuid": "44E8E5CE-9E01-41E4-AF1A-AA3D1DC2C7D7",
+				"type": "MeshStandardMaterial",
+				"color": 4246184,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 4836305,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			},
+			{
+				"uuid": "A0971E86-16FD-474C-807C-058A03E19B47",
+				"type": "MeshStandardMaterial",
+				"color": 0,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			}],
+		"object": {
+			"uuid": "31517222-A9A7-4EAF-B5F6-60751C0BABA3",
+			"type": "Scene",
+			"name": "Scene",
+			"layers": 1,
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "E24AD49B-AE0A-4CA7-BD96-8DF6D7F4943D",
+					"type": "Mesh",
+					"name": "Circle",
+					"layers": 1,
+					"matrix": [7,0,0,0,0,0,-7,0,0,7,0,0,0,0,0,1],
+					"geometry": "38AE3880-AB28-43D7-BD50-720976A610E5",
+					"material": "44E8E5CE-9E01-41E4-AF1A-AA3D1DC2C7D7",
+					"children": [
+						{
+							"uuid": "86E0248E-1BBF-4C44-BF4A-2B8A087B144A",
+							"type": "Mesh",
+							"name": "Circle",
+							"layers": 1,
+							"matrix": [0.099854,0.005404,-0.000004,0,-0.005404,0.099854,-0.000067,0,0,0.000068,0.1,0,0,0,0.01,1],
+							"geometry": "03170D56-4D7A-4AE2-87DD-E11769755A41",
+							"material": "A0971E86-16FD-474C-807C-058A03E19B47"
+						}]
+				},
+				{
+					"uuid": "937BE8B9-D075-483B-9726-E7EEB8761A89",
+					"type": "PerspectiveCamera",
+					"name": "PerspectiveCamera",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,0,-1,0,0,1,0,0,0,5.5,0,1],
+					"fov": 50,
+					"zoom": 1,
+					"near": 0.1,
+					"far": 2000,
+					"focus": 10,
+					"aspect": 1,
+					"filmGauge": 35,
+					"filmOffset": 0
+				}],
+			"background": 11609930
+		}
+	},
+	"scripts": {
+		"86E0248E-1BBF-4C44-BF4A-2B8A087B144A": [
+			{
+				"name": "scale",
+				"source": "this.parent.material.emissive = new THREE.Color(Math.random(),Math.random(),Math.random());\nvar flag = 0;\nfunction update( event ) {\n\tvar a = new THREE.Vector3( 0.03, 0.03, 0.03);\n\tif(flag == 1){\n\t\tthis.scale.sub(a);\n\t}\n\telse{\n\t\tthis.scale.add(a);\n\t}\n\tthis.rotation.z += 0.2;\n\tif(this.scale.x >= 1){\n\t\tflag = 1;\n\t\tthis.parent.material.emissive = new THREE.Color(Math.random(),Math.random(),Math.random());\n\t}\n\telse if(this.scale.x <= 0.01){\n\t\tflag = 0;\n\t\tthis.material.emissive = new THREE.Color(Math.random(),Math.random(),Math.random());\n\t}\n}"
+			}],
+		"937BE8B9-D075-483B-9726-E7EEB8761A89": [
+			{
+				"name": "camera",
+				"source": "function update( event ) {\n\tplayer.setCamera(this);\n}"
+			}]
+	}
+}
