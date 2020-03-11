@@ -17,7 +17,7 @@
 			"type": "PerspectiveCamera",
 			"name": "Camera",
 			"layers": 1,
-			"matrix": [0.758362,0,-0.651834,0,-0.161769,0.968715,-0.188206,0,0.631441,0.248174,0.734637,0,2.917733,1.126253,3.303679,1],
+			"matrix": [0.758362,0,-0.651834,0,-0.161769,0.968715,-0.188206,0,0.631441,0.248174,0.734637,0,5.952729,2.319092,6.834679,1],
 			"fov": 50,
 			"zoom": 1,
 			"near": 0.01,
@@ -157,6 +157,21 @@
 							"filmOffset": 0
 						}
 					}
+				},
+				{
+					"uuid": "2FBBB8B7-B1E8-4C4D-A768-FECEC38B1962",
+					"type": "PerspectiveCamera",
+					"name": "PerspectiveCamera",
+					"layers": 1,
+					"matrix": [0.811696,-0.062377,-0.580739,0,0,0.994281,-0.106795,0,0.584079,0.086685,0.807054,0,2.967116,0.492796,3.932409,1],
+					"fov": 50,
+					"zoom": 1,
+					"near": 0.1,
+					"far": 2000,
+					"focus": 10,
+					"aspect": 1,
+					"filmGauge": 35,
+					"filmOffset": 0
 				}],
 			"background": 597824
 		}
@@ -166,6 +181,11 @@
 			{
 				"name": "rotate",
 				"source": "function update( event ) {\n\tthis.rotation.y += 0.01;\n}"
+			}],
+		"2FBBB8B7-B1E8-4C4D-A768-FECEC38B1962": [
+			{
+				"name": "camera",
+				"source": "function update( event ) {\n\tplayer.setCamera(this);\n}"
 			}]
 	}
 }
