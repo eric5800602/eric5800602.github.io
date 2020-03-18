@@ -1,0 +1,60 @@
+<!DOCTYPE html> <!-- tell browser how to interpret this document -->
+<html> <!-- other tags should be inside this -->
+  <head> <!-- meta (non-content) data goes here-->
+    <meta charset="utf-8">
+    <title>Mcdonald</title>
+    <link href="week1.css" rel="stylesheet"> <!-- a better place to store CSS code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      function drop(){
+        $(".t2").fadeOut();
+        $('.t4').animate({top:'20%'});
+        $(".t1").animate({left:'37.5%',top: '47.7%'});
+        $(".t3").animate({left:'35%',top:'63.5%'});
+          $('.t5').animate(
+            { deg: -10 },
+            {
+              duration: 100,
+              step: function(now) {
+                $(this).css({ transform: 'rotate(' + now + 'deg)' });
+              }
+            }
+          );
+        var wait=setInterval(function(){
+          if(!$(".t3").is(":animated") && !$(".t1").is(":animated") && !$(".t5").is(":animated")){
+            clearInterval(wait);
+            var resp= $("<img src='res/burger_S.png' style='top:50%;left:33%;transform:rotate(-10deg)'></img>");
+            $(resp).hide().prependTo("div").fadeIn();
+            $("div").prepend(resp).fadeIn();
+            $(".t1").fadeOut('slow');
+            $(".t3").fadeOut('slow');
+            $(".t5").fadeOut('slow');
+            $(".t6").animate({left:'3%'});
+            $(".t7").animate({left:'80%'});
+            var slip=setInterval(function(){
+              if(!$(".t6").is(":animated") && !$(".t7").is(":animated")){
+                $(".t6").animate({left:'-80%'});
+                $(".t7").animate({left:'150%'});
+              }
+            },0.2);
+            }
+          },2);
+        
+      }
+    </script>
+  </head>
+  <body> <!-- content goes here -->
+    <img class = "t1" id="hm1" src="res/burger1_S.png" alt="top_hambuger" onclick="drop()">
+    <a href="https://luffy.ee.ncku.edu.tw/~F74066145/homework/week1/menu.html">
+    <img class = "t2" src="res/24HDelivery_button.png" alt="top_hambuger">
+    </a>
+    <img class = "t3" id="hm2" src="res/burger2_S.png" alt="middle_hambuger" >
+    <a href="https://luffy.ee.ncku.edu.tw/~F74066145/homework/week1/menu.html">
+    <img  class = "t4" src="res/MENU_button.png" alt="top_hambuger">
+    </a>
+    <img class = "t5" id="hm3" src="res/burger3_S.png" alt="lower_hambuger">
+    <img class = "t6" src="res/M_L.png"  >
+    <img class = "t7" src="res/M_R.png"  >
+    <div></div>
+  </body>
+</html>
