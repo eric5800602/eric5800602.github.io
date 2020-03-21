@@ -279,6 +279,8 @@
           $(".real_bug").animate({height:'6vh',width:'4.5vw',top:'6vh',left:'1.2vw'},2000,function(){
             $("body").css({overflow:'auto'});
           });
+          var resp= $("<input type='button' style='background-color:transparent; font-size:3vmin;position:absolute;border:none; color:yellow;width:100%;height:100%;padding-bottom: 5vh;'value='訂單'>");
+          $(resp).hide().prependTo($(".bg-red")).fadeIn();
         },2000);
     }
   </script>
