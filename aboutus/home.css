@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body, html{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.reross{
+    font-family: reross-quadratic, sans-serif;
+}
+.sans{
+    font-family: 'Noto Sans TC';
+}
+
+/* Background */
+.upRectangle{
+    position: absolute;
+    background-color: #B68AAE;
+    height: 29vh;
+    width: 15vw;
+    z-index: -1;
+}
+.downRectangle{
+    position: absolute;
+    background-color: #396281;
+    height: 80vh;
+    width: 85vw;
+    right: 0;
+    bottom: 6vh;
+    z-index: -1;
+}
+
+/* Header */
+.aboutus{
+    color: #2B2E34;
+    font-size: 8.6vw;
+    line-height: 10vh;
+    font-weight: 100;
+    padding: 12.2vh 0 0 5.5vw;
+}
+.about{
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    vertical-align: bottom;
+
+}
+.us{
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    vertical-align: bottom;
+}
+._{
+    display: inline;
+    font-size: 7.5vw;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: 10vh;
+}
+
+/* Navagation */
+.navagation{
+    font-size: 1.2vw;
+    display: inline-block;
+    padding: 29vh 0 0 6vw;
+}
+.navagation_content{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+li{
+    padding: 0 0 0.6vh 2vw;
+    display: block;
+    opacity: 0;
+}
+li a{
+    font-weight: 600;
+    color: #2B2E34;
+    text-decoration: none;
+    border-bottom: 0.08rem solid #2B2E34;
+}
+
+/* Article */
+.intro{
+    display: inline-block;
+    color: #FFFFFF;
+    vertical-align: top;
+    margin: 20vh 0 0 17.8vw;
+    opacity: 1;
+}
+.intro.hide{
+    opacity: 0;
+}
+.intro_name{
+    font-size: 1.5vw;
+    font-weight: 500;
+    display: inline;
+}
+.intro_line{
+    font-weight: 500;
+    display: inline;
+}
+.intro_prefix{
+    font-weight: 500;
+    display: inline-block;
+    letter-spacing: -0.15vw;
+    color: #B68AAE;
+}
+.intro_suffix{
+    font-weight: 200;
+    display: inline-block;
+}
+.intro_content{
+    font-size: 0.8vw;
+    margin: 4vh 0 0 1.5vw;
+    line-height: 2rem;
+}
+
+/* Photo */
+.photo{
+    display: inline-block;
+    height: 66vh;
+    position: absolute;
+    bottom: 12.8vh;
+    right: 6vw;
+    opacity: 1;
+}
+/* Animation */
+#dot{
+    width: 50vw;
+    height: auto;
+    position: absolute;
+    border-left:1.5px solid;
+    opacity : 0;
+}
+#index {
+    width: 1vw;
+    height: 2vh;
+    border-radius: 999em;
+    position: absolute;
+    margin-left: -0.6vw;
+    top: 1.5vh;
+    background-color: black;
+    opacity : 0;
+}
