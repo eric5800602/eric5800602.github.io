@@ -7,6 +7,7 @@ $("#about_animate7").hide();
 $("#prefix_up0").hide();
 $("#prefix_down0").hide();
 var index_person=0;
+var mutex = true;
 $(document).ready(()=>{
     idx = 1;
     var about = setInterval(function (){
@@ -72,6 +73,12 @@ $(document).ready(()=>{
 })
 
 function change_index(parameter){
+    if(mutex){
+        mutex = false;
+    }
+    else{
+        return;
+    }
     if(parameter == index_person){return;}
     $("#prefix_up"+index_person).animate({
         "opacity" : "0"
@@ -126,21 +133,25 @@ function change_index(parameter){
                 break;
         }
         if(old > parameter){
-            $("#intro"+index_person).transition('fly down','1s');
-            $("#photo"+index_person).transition('fly down','1s',function(){
+            $("#intro"+index_person).transition('fly down','1.25s');
+            $("#photo"+index_person).transition('fly down','1.25s',function(){
                 $("#prefix_up"+index_person).css("opacity","1");
                 $("#prefix_down"+index_person).css("opacity","1");
                 $("#prefix_up"+index_person).transition('slide down in','0.5s');
-                $("#prefix_down"+index_person).transition('slide up in','0.5s');
+                $("#prefix_down"+index_person).transition('slide up in','0.5s',function(){
+                    mutex = true;
+                });
             });
         }
         else{
-            $("#intro"+index_person).transition('fly up','1.5s');
-            $("#photo"+index_person).transition('fly up','1.5s',function(){
+            $("#intro"+index_person).transition('fly up','1.25s');
+            $("#photo"+index_person).transition('fly up','1.25s',function(){
                 $("#prefix_up"+index_person).css("opacity","1");
                 $("#prefix_down"+index_person).css("opacity","1");
                 $("#prefix_up"+index_person).transition('slide down in','0.5s');
-                $("#prefix_down"+index_person).transition('slide up in','0.5s');
+                $("#prefix_down"+index_person).transition('slide up in','0.5s',function(){
+                    mutex = true;
+                });
             });
         }
     },500);
